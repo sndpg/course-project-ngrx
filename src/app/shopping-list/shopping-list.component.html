@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-item></app-shopping-item>
+    <hr />
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="
+          let ingredient of (shoppingListState | async).ingredients;
+          let currentIndex = index
+        "
+        (click)="onEditItem(currentIndex)"
+        [ngClass]="{
+          active:
+            currentIndex === (shoppingListState | async).editedIngredientIndex
+        }"
+      >
+        {{ ingredient | formatIngredient }}
+      </a>
+    </ul>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="navigateToRecipes()">
+  To Recipes
+</button>
+<button class="btn btn-primary" (click)="onReload()">
+  Reload
+</button>

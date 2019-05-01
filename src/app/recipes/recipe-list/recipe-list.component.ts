@@ -15,8 +15,6 @@ import * as fromRecipe from '../store/recipe.reducer';
 export class RecipeListComponent implements OnInit {
   recipesState: Observable<fromRecipe.State>;
 
-  recipesChangedSubscription: Subscription;
-
   constructor(
     public recipeService: RecipeService,
     private router: Router,

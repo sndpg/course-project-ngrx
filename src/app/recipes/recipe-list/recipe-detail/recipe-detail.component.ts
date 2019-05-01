@@ -6,7 +6,6 @@ import { take } from 'rxjs/operators';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { AddIngredients } from 'src/app/shopping-list/store/shopping-list.actions';
 import { Recipe } from '../../recipe.model';
-import { RecipeService } from '../../recipe.service';
 import { DeleteRecipe } from '../../store/recipe.actions';
 import * as fromRecipe from '../../store/recipe.reducer';
 
@@ -20,7 +19,6 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
 
   constructor(
-    private recipeService: RecipeService,
     public shoppingListService: ShoppingListService,
     private route: ActivatedRoute,
     private router: Router,

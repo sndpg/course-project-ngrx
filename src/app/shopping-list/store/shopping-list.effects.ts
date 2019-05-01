@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { AppState } from 'src/app/store/app.reducer';
 import { Store } from '@ngrx/store';
-import { store } from '@angular/core/src/render3';
 
 export const shoppingListUrl =
   'https://ng-recipe-book-f5fd9.firebaseio.com/shopping-list.json';

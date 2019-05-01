@@ -30,14 +30,13 @@ export class RecipeDetailComponent implements OnInit {
       console.log('RecipeDetailComponent.ngOnit: recipe.id = ' + params.id);
       const recipeId = +params.id;
       this.recipesState = this.store.select('recipes');
-      this.recipesState
-        .pipe(take(1))
-        .subscribe(
-          recipesState =>
-            (this.recipe = recipesState.recipes.find(
-              recipe => recipe.id == recipeId
-            ))
-        );
+      this.recipesState.pipe(take(1)).subscribe(
+        recipesState =>
+          (this.recipe = recipesState.recipes.find(
+            // tslint:disable-next-line: triple-equals
+            recipe => recipe.id == recipeId
+          ))
+      );
     });
   }
 
@@ -49,6 +48,7 @@ export class RecipeDetailComponent implements OnInit {
         this.store.dispatch(
           new AddIngredients(
             recipesState.recipes.find(
+              // tslint:disable-next-line: triple-equals
               recipe => recipe.id == this.recipe.id
             ).ingredients
           )

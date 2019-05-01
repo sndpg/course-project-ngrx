@@ -104,6 +104,7 @@ export class RecipeEditComponent implements OnInit {
         .pipe(take(1))
         .subscribe(recipesState => {
           const currentRecipe = recipesState.recipes.find(
+            // tslint:disable-next-line: triple-equals
             recipe => recipe.id == this.id
           );
           recipeName = currentRecipe.name;

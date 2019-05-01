@@ -20,7 +20,7 @@ import { ShoppingListEffects } from './shopping-list/store/shopping-list.effects
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'recipe-book-app' }),
     AuthModule,
     RecipesModule,
     ShoppingListModule,

@@ -8,6 +8,8 @@ export const shoppingListUrl =
 
 @Injectable()
 export class ShoppingListService {
+  // subscribe so ingredientsChanged in components which need to get the data from it...
+  // e.g. in ngOnit of the component: ingredientsChanged.subscribe(...)
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
   private ingredients: Ingredient[] = [];
